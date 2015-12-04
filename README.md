@@ -1,1 +1,1 @@
-# rails_experiments
+These are a few Rails apps I wrote

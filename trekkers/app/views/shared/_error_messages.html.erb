@@ -1,0 +1,17 @@
+<% if @user.errors.any? %>
+
+	<div id= "error-box">
+		<div class="alert">
+			Found a few issues with the form.
+		</div>
+		<ul>
+			<% @user.errors.each do |attri, msg| %>
+				
+				<li><%= "#{attri} #{msg}" if @user.errors[attri].first == msg %></li>
+			<% end %>
+		</ul>
+	</div>
+
+
+<% end %>
+

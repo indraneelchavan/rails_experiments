@@ -1,0 +1,84 @@
+<% provide(:title, "Register") %>
+
+<%= render 'layouts/header' %>
+    <%= render 'shared/error_messages' %>
+
+    <div id="form-container">
+			
+		<div id="create"><h1>Create a new account</h1></div>
+
+
+		<div class="left-column">
+
+			<!-- <form action="/account/register" method="post" id="form-register">
+
+				<ul>
+					<li><label for="email">Your E-mail</label>
+					<input name="email" type="email" id="email" /></li>
+
+					<li><label for="confirm-email">Confirm E-mail</label>
+					<input name="confirm-email" id="confirm-email" type="email" id="email" /></li>
+
+					<li><label for="city">Your City</label>
+					<input name= "city" id="city" type="text"></li>
+
+					<li><label for="pincode">Pin Code</label>
+					<input name= "pincode" id="pincode" type="text"></li>
+
+					<li><label for="password">Password</label>
+					<input name="password" type="password" id= "password" class="required" ></li>
+
+					<li><label for="confirm-password">Confirm Password</label>
+            		<input name="confirm-password" type="password" id="confirm-password" class="required" ></li>
+
+            		<li><label for="mobile">Your Contact Number</label>
+					<input name= "mobile" id="mobile" type="text"></li>
+
+					<li><input type="submit" /></li>
+				</ul>
+			</form> -->
+
+			<%= form_for(@user) do |f| %>
+
+
+				<ul>
+					<li><%= f.label :name, "Your Name" %>
+					<%= f.text_field :name, id: "name" %>
+
+					<li><%= f.label :email, "Your E-mail" %>
+					<%= f.email_field :email, id: "email" %>
+
+					<li><%= f.label :city, "City" %>
+					<%= f.text_field :city, id: "city" %>
+
+					<li><%= f.label :pin, "Pin Code" %>
+					<%= f.text_field :pin, id: "pincode" %>
+
+					<li><%= f.label :password, "Password" %>
+					<%= f.password_field :password, id: "password" %>
+
+					<li><%= f.label :password_confirmation, "Re-enter Password" %>
+					<%= f.password_field :password_confirmation, id: "confirm-password" %>
+
+					<li><%= f.label :contact, "Your Contact Number" %>
+					<%= f.text_field :contact, id: "mobile" %>
+
+					<li><%= f.submit "Create" %></li>
+				</ul>
+			<% end %> 
+		</div>
+
+		<div class="right-column">
+			<div id="why-register">
+				
+				<span class="why-ques">Why Register?</span>
+
+				<ul>
+					<li>Get updates regarding upcoming treks right in your mailbox</li>
+					<li>Leave feedback on your past treks</li>
+				</ul>
+			</div>
+
+		</div>
+
+    </div>

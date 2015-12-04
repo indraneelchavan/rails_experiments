@@ -1,0 +1,39 @@
+<div id="header">
+    
+    	<div id="pages">
+			<ul>
+				<li><a href="#">Previous</a></li>
+				<li><a href="#">Upcoming</a></li>
+				<li><a href="#">About Us</a></li>
+			</ul>
+
+		</div>
+
+		<div id="register">	
+			<ul>
+				<% if !logged_in? %> 
+				<!-- <li><a href="#">Login</a></li> -->
+				<li><%= link_to 'Login', login_path %></li>
+				<!-- <li><a href="#">Register</a></li> -->
+				<li><%= link_to 'Register', register_path %></li>
+				<% end %>
+
+				<% if logged_in? %> 
+
+				<li>Welcome <%= current_user_name %>!</li>
+
+				<li><%= link_to 'Profile', '#' %></li>
+
+				<li><%= link_to 'Logout', logout_path, method: "delete" %></li>
+				
+				
+				
+				<% end %>
+			</ul>
+
+    	</div>
+    </div>
+
+    <% flash.each do |message_type,message| %>
+		<div id= "error-box"><%= message %></div>
+	<% end %>

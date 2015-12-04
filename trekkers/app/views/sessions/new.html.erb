@@ -1,0 +1,30 @@
+<% provide(:title, "Login") %>
+
+<%= render 'layouts/header' %>
+
+
+<div id="login-form-container">
+			
+	<div id="create"><h1>Login</h1></div>
+
+	<%= form_for(:session, url: login_path) do |f| %>
+
+
+		<ul>
+
+			<li><%= f.label :email, "Your E-mail" %>
+			<%= f.email_field :email, id: "email" %>
+
+			<li><%= f.label :password, "Password" %>
+			<%= f.password_field :password, id: "password" %>
+
+			<li><%= f.label :remember_me do %>
+        		<%= f.check_box :remember_me %>
+        		Remember me on this computer
+      		<% end %></li>
+
+			<li><%= f.submit "Login" %></li>
+		</ul>
+	<% end %> 
+
+</div>
